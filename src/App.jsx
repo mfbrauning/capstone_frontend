@@ -8,6 +8,8 @@ import AllLocations from "./pages/AllLocations"
 import SingleLocation from "./pages/SingleLocation"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import HomePage from "./pages/HomePage"
+
 
 function App() {
 
@@ -62,6 +64,7 @@ function App() {
     <div className="App">
       <Header/>
       <Routes>
+        <Route path="/" element={<HomePage locations={locations} artists={artists} artworks={artworks} />} />
         <Route path="/artworks" element={<AllArtworks locations={locations} artists={artists} artworks={artworks} getArtworks={getArtworks}/>}/>
         <Route path="/artworks/:id" element={<SingleArtwork locations={locations} artists={artists} artworks={artworks} getArtworks={getArtworks}/>} />
         <Route path="/artists" element={<AllArtists artistURL={artistURL} artists={artists} getArtists={getArtists}/>}/>

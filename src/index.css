@@ -12,6 +12,31 @@ code {
     monospace;
 }
 
+.home-page{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80vh;
+}
+
+.home-page-cards {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+  width: 400px;
+  height: 400px;
+  margin: 20px auto;
+  padding-bottom: 50px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.home-page img {
+  max-height: 300px;
+  max-width: 300px;
+}
+
 .modal-background {
   width: 100vw;
   height: 100vh;
@@ -286,3 +311,94 @@ svg:hover{
   background-color: #D9D9D9;
 }
 
+@media screen and (max-width: 600px){
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    height: 35px;
+    width: 100vw;
+    top: 0;
+    background-color:#95bba9;
+    margin: 0px;
+    font-size: .5em;
+  }
+
+  .nav a {
+    padding: 10px;
+    margin: 5px;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .single-location, .single-artist, .single-artwork {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+  }
+
+  .single-artist img, .single-location img, .single-artwork img{
+    width: 100%;
+  }
+
+  .location-images, .artist-artwork{
+    display: flex;
+    flex-wrap: wrap;
+    height: 500px;
+    width: 100%;
+    overflow: scroll;
+  }
+
+  .all-artworks, .all-locations {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .artwork, .location {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    width: 300px;
+    height: 300px;
+    margin: 10px auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: flex-end;
+    justify-content:flex-end;
+  }
+
+  .artwork img, .location img, .home-page img {
+    max-width: 250px;
+    max-height: 200px;
+    margin: 5px;
+  }
+
+  .home-page{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .home-page-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 250px;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 10px;
+  }
+}
