@@ -61,7 +61,7 @@ function SingleLocation(props){
                     {location?.city}, {location?.country}
                     <br/>
                     <h4>WEBSITE</h4>
-                    <a href={location?.website}>{location?.website}</a>
+                    <a href={location?.website} target="_blank">{location?.website}</a>
                 </p>
                 </div>
                 <div className="location-images">
