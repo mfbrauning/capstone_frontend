@@ -2,6 +2,7 @@ import Location from "../components/Location"
 import Modal from "../components/Modal"
 import LocationForm from "../components/LocationForm"
 import { useState } from "react"
+import AddIcon from '@mui/icons-material/Add';
 
 function AllLocations(props){
     const nullLocation = {
@@ -9,7 +10,8 @@ function AllLocations(props){
         type: "",
         city: "",
         country: "",
-        website: ""
+        website: "",
+        image: ""
     }
 
     const addLocations = async (location) => {
@@ -26,14 +28,17 @@ function AllLocations(props){
     const [isOpen, setOpen] = useState(false)
 
     return (
-        <div>
-            <h1>Museums and Galleries</h1>
-            <button onClick={() => setOpen(true)}>Add</button>
+        <div className="locations-main">
+            <div className="add-location">
+            <AddIcon onClick={() => setOpen(true)}/>
             <Modal isOpen={isOpen} close={() => setOpen(false)}>
                 <h1>Add</h1>
                 <LocationForm initialLocation={nullLocation} handleSubmit={addLocations} buttonLabel="add location" isOpen={isOpen} close={() => setOpen(false)}/>
             </Modal>
+            </div>
+            <div className="all-locations">
             {props.locations.map((location) => <Location location={location} key={location.id}/>)}
+            </div>
         </div>
     )
 }

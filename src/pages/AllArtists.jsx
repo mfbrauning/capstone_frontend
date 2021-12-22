@@ -2,13 +2,16 @@ import Artist from "../components/Artist"
 import Modal from "../components/Modal"
 import ArtistForm from "../components/ArtistForm"
 import { useState } from "react"
+import AddIcon from '@mui/icons-material/Add';
 
 function AllArtists(props){
+    
     const nullArtist = {
         name: "",
         nationality: "",
         dob: "",
-        movement: ""
+        movement: "",
+        image: ""
     }
 
     const addArtists = async (artist) => {
@@ -24,6 +27,8 @@ function AllArtists(props){
 
     const [isOpen, setOpen] = useState(false)
 
+
+
     return (
         <div className="all-artists">
             <div >
@@ -34,7 +39,7 @@ function AllArtists(props){
             {props.artists.map((artist) => <Artist artist={artist} key={artist.id}/> )}
             </div>
             <div className="add-artist">
-            <button onClick={() => setOpen(true)}>+</button>
+            <AddIcon onClick={() => setOpen(true)}/>
             </div>
         </div>
     )

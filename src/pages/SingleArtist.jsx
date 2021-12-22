@@ -2,6 +2,8 @@ import { useState } from "react"
 import { useNavigate, useParams, Link } from "react-router-dom"
 import ArtistForm from "../components/ArtistForm"
 import Modal from "../components/Modal"
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function SingleArtist(props){
     const navigate = useNavigate()
@@ -13,7 +15,8 @@ function SingleArtist(props){
         name: artist?.name,
         nationality: artist?.nationality,
         dob: artist?.dob,
-        movement: artist?.movement
+        movement: artist?.movement,
+        image: artist?.image
     }
 
     const [isOpen, setOpen] = useState(false)
@@ -40,20 +43,26 @@ function SingleArtist(props){
     return (
         <div className="single-artist">
             <div className="single-artist-left">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="artistplaceholder"/>
+                <img src={artist?.image} alt={artist?.name}/>
                 <br/>
-                <button onClick={() => setOpen(true)}>Edit Artist</button>
-                <button onClick={deleteArtist}>Delete</button>
+                <div>
+                <EditIcon onClick={() => setOpen(true)}/>
+                <DeleteIcon onClick={deleteArtist}/>
+                </div>
             </div>
             <div className="single-artist-right">
                 <div>
-                    <h3>{artist?.name}</h3>
-                    <br/>
+                <h2>{artist?.name}</h2>
+                <p>
+                    <h4>NATIONALITY</h4>
                     {artist?.nationality}
                     <br/>
+                    <h4>BORN</h4>
                     {artist?.dob}
                     <br/>
+                    <h4>MOVEMENT</h4>
                     {artist?.movement}
+                </p>
                 </div>
                 <div className="artist-artwork">
                     {!artist?.artworks? "noimage" : artist?.artworks.map((artworks) => <Link to={`/artworks/${artworks?.id}`} key={artworks?.id}><img key={artworks.id} src={artworks?.image}/></Link>)}

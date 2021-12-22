@@ -2,20 +2,16 @@ import { Link } from 'react-router-dom'
 
 function Artwork({artwork}){
     return (
-        <div>
+        <div className='artwork'>
             <Link to={`/artworks/${artwork.id}`}>
-            {artwork.title}
+            <img src={artwork.image}/>
             </Link>
             <br/>
-            {artwork.year}
-            <br/>
-            {artwork.medium}
-            <br/>
-            <img src={artwork.image}/>
-            <br/>
+            <p>
             {artwork.artist.name}
             <br/>
-            {artwork.location.name}
+            <i>{artwork.title}</i>, {artwork.year}
+            </p>
         </div>
     )
 }

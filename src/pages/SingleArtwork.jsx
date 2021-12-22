@@ -1,7 +1,9 @@
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Link } from "react-router-dom"
 import { useState } from "react"
 import Modal from "../components/Modal"
 import ArtworkForm from "../components/ArtworkForm"
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 function SingleArtwork(props){
     const navigate = useNavigate()
@@ -47,21 +49,31 @@ function SingleArtwork(props){
 
 
     return (
-        <div>
-            {artwork?.title}
-            <br/>
-            <img src={artwork?.image}/>
-            <br/>
-            {artwork?.artist.name}
-            <br/>
-            {artwork?.year}
-            <br/>
-            {artwork?.medium}
-            <br/>
-            {artwork?.location.name}
-            <br/>
-            <button onClick={() => setOpen(true)}>Edit Artwork</button>
-            <button onClick={deleteArtwork}>Delete</button>
+        <div className="single-artwork">
+            <div className="single-artwork-left">
+                <img src={artwork?.image}/>
+                <br/>
+                <EditIcon onClick={() => setOpen(true)}/>
+                <DeleteIcon onClick={deleteArtwork}/>
+            </div>
+            <div className="single-artwork-right">
+                <h2>{artwork?.title}</h2>
+                <p>
+                    <h4>ARTIST</h4>
+                    <Link to={`/artists/${artwork?.artist.id}`}>{artwork?.artist.name}</Link>
+                    <br/>
+                    <h4>YEAR</h4>
+                    {artwork?.year}
+                    <br/>
+                    <h4>MEDIUM</h4>
+                    {artwork?.medium}
+                    <br/>
+                    <h4>LOCATION</h4>
+                    <Link to={`/locations/${artwork?.location.id}`}>{artwork?.location.name}</Link>
+                </p>
+            </div>
+            
+            
             <Modal isOpen={isOpen} close={() => setOpen(false)}>
                 <h1>Edit Artwork</h1>
                 <br/>

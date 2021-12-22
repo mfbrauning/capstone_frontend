@@ -1,7 +1,9 @@
-import { useParams, useNavigate } from "react-router-dom"
+import { useParams, useNavigate, Link } from "react-router-dom"
 import { useState } from "react"
 import Modal from "../components/Modal"
 import LocationForm from "../components/LocationForm"
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 function SingleLocation(props){
@@ -15,7 +17,8 @@ function SingleLocation(props){
         type: location?.type,
         city: location?.city,
         country: location?.country,
-        website: location?.website
+        website: location?.website,
+        image: location?.image
     }
 
     const [isOpen, setOpen] = useState(false)
@@ -40,15 +43,33 @@ function SingleLocation(props){
     }
 
     return (
-        <div>
-            <h1>{location?.name}</h1>
-            <h3>{location?.city}, {location?.country}</h3>
-            <a href={location?.website} alt="website">Website</a>
-            <div>
-                {!location?.artworks ? "no image" : location?.artworks.map((artworks)=> <img key={artworks.id} src={artworks?.image}/>)}
+        <div className="single-location">
+            <div className="single-location-left">
+                <img src={location?.image} alt={location?.name}/>
+                <br/>
+                <div>
+                <EditIcon onClick={() => setOpen(true)}/>
+                <DeleteIcon onClick={deleteLocation}/>
+                </div>
             </div>
-            <button onClick={() => setOpen(true)}>Edit</button>
-            <button onClick={deleteLocation}>Delete</button>
+            <div className="single-location-right">
+            
+                <div>
+                <h2>{location?.name}</h2>
+                <p>
+                    <h4>LOCATION</h4>
+                    {location?.city}, {location?.country}
+                    <br/>
+                    <h4>WEBSITE</h4>
+                    <a href={location?.website}>{location?.website}</a>
+                </p>
+                </div>
+                <div className="location-images">
+                {!location?.artworks? "noimage" : location?.artworks.map((artworks) => <Link to={`/artworks/${artworks?.id}`} key={artworks?.id}><img key={artworks.id} src={artworks?.image}/></Link>)}   
+                </div>
+            </div>
+            
+            
             <Modal isOpen={isOpen} close={() => setOpen(false)}>
                 <h1>Edit Location</h1>
                 <br/>

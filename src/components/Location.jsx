@@ -2,10 +2,14 @@ import { Link } from "react-router-dom"
 
 function Location({location}){
     return (
-        <div>
-            <Link to={`/locations/${location.id}`}>{location.name}</Link>
+        <div className="location">
+            <Link to={`/locations/${location.id}`}><img src={location.image} alt={location.name}/></Link>
             <br/>
-            {location.city}
+            <p>
+            {location.name}
+            <br/>
+            <small>{location.city}, {location.country}</small>
+            </p>
         </div>
     )
 }

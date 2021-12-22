@@ -51,6 +51,13 @@ function ArtistForm({initialArtist, handleSubmit, buttonLabel, close}){
                 onChange={handleChange}
             />
             <br/>
+            <input
+                type="text"
+                value={formData.image}
+                name="image"
+                placeholder="Artist Image URL"
+                onChange={handleChange}
+            />
             <input type="submit" value={buttonLabel}/>
         </form>
         )

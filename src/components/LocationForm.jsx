@@ -56,6 +56,13 @@ function LocationForm({initialLocation, handleSubmit, buttonLabel, close}){
                 onChange={handleChange}
             />
             <br/>
+            <input
+                type="text"
+                value={formData.image}
+                name="image"
+                placeholder="Image URL"
+                onChange={handleChange}
+            />
             <input type="submit" value={buttonLabel}/>
         </form>
     )
