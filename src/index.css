@@ -218,14 +218,14 @@ h4{
   margin: 8px 0;
 }
 
-.css-i4bv87-MuiSvgIcon-root {
+svg {
   background-color:#F2F2F2;
   height: 30px;
   width: 30px;
   margin: 20px;
 }
 
-.css-i4bv87-MuiSvgIcon-root:hover{
+svg:hover{
   cursor: pointer;
   background-color: #D9D9D9;
 }
