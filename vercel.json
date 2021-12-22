@@ -1,0 +1,11 @@
+{
+    "rewrites": [
+        { "source": "/(.*)", "destination": "/" },
+        {"source": "/artworks", "destination": "/artworks"},
+        {"source": "/artworks/:id", "destination": "/artworks/:id" },
+        {"source": "/artists", "destination": "/artists"},
+        {"source": "/artists/:id", "destination": "/artists/:id" },
+        {"source": "/locations", "destination": "/locations"},
+        {"source": "/locations/:id", "destination": "/locations/:id" }
+    ]
+  }
