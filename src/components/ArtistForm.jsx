@@ -20,6 +20,7 @@ function ArtistForm({initialArtist, handleSubmit, buttonLabel, close}){
     return (
         <form onSubmit={handleSubmission}>
             <input
+                className="input"
                 type="text"
                 value={formData.name}
                 name="name"
@@ -28,6 +29,7 @@ function ArtistForm({initialArtist, handleSubmit, buttonLabel, close}){
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData.nationality}
                 name="nationality"
@@ -36,6 +38,7 @@ function ArtistForm({initialArtist, handleSubmit, buttonLabel, close}){
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData.dob}
                 name="dob"
@@ -44,6 +47,7 @@ function ArtistForm({initialArtist, handleSubmit, buttonLabel, close}){
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData.movement}
                 name="movement"
@@ -52,13 +56,15 @@ function ArtistForm({initialArtist, handleSubmit, buttonLabel, close}){
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData.image}
                 name="image"
                 placeholder="Artist Image URL"
                 onChange={handleChange}
             />
-            <input type="submit" value={buttonLabel}/>
+            <br/>
+            <input className="submit" type="submit" value={buttonLabel}/>
         </form>
         )
     

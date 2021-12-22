@@ -26,6 +26,7 @@ function ArtworkForm({artworks, artists, locations, initialArtwork, handleSubmit
     return (
         <form onSubmit={handleSubmission}>
             <input
+                className="input"
                 type="text"
                 value={formData?.title}
                 name="title"
@@ -34,6 +35,7 @@ function ArtworkForm({artworks, artists, locations, initialArtwork, handleSubmit
             />
             <br/>
             <input
+                className="input"
                 type="number"
                 value={formData?.year}
                 name="year"
@@ -42,6 +44,7 @@ function ArtworkForm({artworks, artists, locations, initialArtwork, handleSubmit
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData?.medium}
                 name="medium"
@@ -50,6 +53,7 @@ function ArtworkForm({artworks, artists, locations, initialArtwork, handleSubmit
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData?.image}
                 name="image"
@@ -67,7 +71,7 @@ function ArtworkForm({artworks, artists, locations, initialArtwork, handleSubmit
                 {locations.map((location) => <option value={location?.id} key={location?.id}>{location?.name}</option>)}
             </select>
             <br/>
-            <input type="submit" value={buttonLabel}/>
+            <input className="submit" type="submit" value={buttonLabel}/>
         </form>)
 }
 

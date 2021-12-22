@@ -75,9 +75,7 @@ function SingleArtwork(props){
             
             
             <Modal isOpen={isOpen} close={() => setOpen(false)}>
-                <h1>Edit Artwork</h1>
-                <br/>
-                <ArtworkForm artists={artists} locations={locations} initialArtwork={editArtwork} handleSubmit={updateArtworks} buttonLabel="update artwork" close={() => setOpen(false)}/>
+                <ArtworkForm artists={artists} locations={locations} initialArtwork={editArtwork} handleSubmit={updateArtworks} buttonLabel="Update" close={() => setOpen(false)}/>
             </Modal>
         </div>
     )

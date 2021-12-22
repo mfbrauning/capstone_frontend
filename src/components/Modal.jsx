@@ -1,5 +1,7 @@
 import ReactDOM from "react-dom"
 const portalRoot = document.getElementById("portal-root")
+import CloseIcon from '@mui/icons-material/Close';
+
 
 
 
@@ -9,7 +11,7 @@ function Modal({isOpen, close, children}){
     return ReactDOM.createPortal(
         <div className="modal-background">
             <div className="modal-content">
-                <button onClick={close}>close</button>
+                <CloseIcon className="close-icon" onClick={close}/>
                 {children}
             </div>
         </div>,

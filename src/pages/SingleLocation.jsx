@@ -71,9 +71,7 @@ function SingleLocation(props){
             
             
             <Modal isOpen={isOpen} close={() => setOpen(false)}>
-                <h1>Edit Location</h1>
-                <br/>
-                <LocationForm initialLocation={editLocation} handleSubmit={updateLocations} buttonLabel="update location" close={() => setOpen(false)}/>
+                <LocationForm initialLocation={editLocation} handleSubmit={updateLocations} buttonLabel="Update" close={() => setOpen(false)}/>
             </Modal>
         </div>
     )

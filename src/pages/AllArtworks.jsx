@@ -38,8 +38,7 @@ function AllArtworks(props){
             <div className="add-artwork">
             <AddIcon onClick={() => setOpen(true)}/>
             <Modal isOpen={isOpen} close={() => setOpen(false)}>
-                <h1>Add Artwork</h1>
-                <ArtworkForm locations={locations} artists={artists} artworks={artworks} initialArtwork={nullArtwork} handleSubmit={addArtworks} buttonLabel="create artwork" isOpen={isOpen} close={() => setOpen(false)}/>
+                <ArtworkForm locations={locations} artists={artists} artworks={artworks} initialArtwork={nullArtwork} handleSubmit={addArtworks} buttonLabel="Add" isOpen={isOpen} close={() => setOpen(false)}/>
             </Modal>
             </div>
         <div className="all-artworks">

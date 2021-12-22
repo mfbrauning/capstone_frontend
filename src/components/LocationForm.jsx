@@ -17,6 +17,7 @@ function LocationForm({initialLocation, handleSubmit, buttonLabel, close}){
     return (
         <form onSubmit={handleSubmission}>
             <input
+                className="input"
                 type="text"
                 value={formData.name}
                 name="name"
@@ -25,6 +26,7 @@ function LocationForm({initialLocation, handleSubmit, buttonLabel, close}){
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData.type}
                 name="type"
@@ -33,6 +35,7 @@ function LocationForm({initialLocation, handleSubmit, buttonLabel, close}){
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData.city}
                 name="city"
@@ -41,6 +44,7 @@ function LocationForm({initialLocation, handleSubmit, buttonLabel, close}){
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData.country}
                 name="country"
@@ -49,6 +53,7 @@ function LocationForm({initialLocation, handleSubmit, buttonLabel, close}){
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData.website}
                 name="website"
@@ -57,13 +62,15 @@ function LocationForm({initialLocation, handleSubmit, buttonLabel, close}){
             />
             <br/>
             <input
+                className="input"
                 type="text"
                 value={formData.image}
                 name="image"
                 placeholder="Image URL"
                 onChange={handleChange}
             />
-            <input type="submit" value={buttonLabel}/>
+            <br/>
+            <input className="submit" type="submit" value={buttonLabel}/>
         </form>
     )
 }

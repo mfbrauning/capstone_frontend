@@ -1,5 +1,11 @@
+import GitHubIcon from '@mui/icons-material/GitHub';
+
 function Footer(props){
-    return <h1>Footer</h1>
+    return (
+        <div className='footer'>
+        <small className='copyright'>&copy; 2021 Fran Brauning</small>
+        </div>
+    )
 }
 
 export default Footer

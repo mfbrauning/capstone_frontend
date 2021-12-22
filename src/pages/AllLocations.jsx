@@ -32,8 +32,7 @@ function AllLocations(props){
             <div className="add-location">
             <AddIcon onClick={() => setOpen(true)}/>
             <Modal isOpen={isOpen} close={() => setOpen(false)}>
-                <h1>Add</h1>
-                <LocationForm initialLocation={nullLocation} handleSubmit={addLocations} buttonLabel="add location" isOpen={isOpen} close={() => setOpen(false)}/>
+                <LocationForm initialLocation={nullLocation} handleSubmit={addLocations} buttonLabel="Add" isOpen={isOpen} close={() => setOpen(false)}/>
             </Modal>
             </div>
             <div className="all-locations">

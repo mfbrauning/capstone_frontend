@@ -71,9 +71,7 @@ function SingleArtist(props){
             <br/>
             
             <Modal isOpen={isOpen} close={() => setOpen(false)}>
-                <h1>Edit Artist</h1>
-                <br/>
-                <ArtistForm initialArtist={editArtist} handleSubmit={updateArtists} buttonLabel="update artist" close={() => setOpen(false)}/>
+                <ArtistForm initialArtist={editArtist} handleSubmit={updateArtists} buttonLabel="Update" close={() => setOpen(false)}/>
             </Modal>
         </div>
     )

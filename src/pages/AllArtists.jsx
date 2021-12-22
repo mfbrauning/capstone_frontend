@@ -33,8 +33,7 @@ function AllArtists(props){
         <div className="all-artists">
             <div >
             <Modal isOpen={isOpen} close={() => setOpen(false)}>
-                <h1>Add Artist</h1>
-                <ArtistForm initialArtist={nullArtist} handleSubmit={addArtists} buttonLabel="create artist" isOpen={isOpen} close={() => setOpen(false)}/>
+                <ArtistForm initialArtist={nullArtist} handleSubmit={addArtists} buttonLabel="Add" isOpen={isOpen} close={() => setOpen(false)}/>
             </Modal>
             {props.artists.map((artist) => <Artist artist={artist} key={artist.id}/> )}
             </div>
