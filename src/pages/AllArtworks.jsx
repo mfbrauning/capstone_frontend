@@ -43,7 +43,7 @@ function AllArtworks(props){
             </Modal>
             </div>
         <div className="all-artworks">
-            {props.artworks.map((artwork) => <Artwork artwork={artwork} key={artwork.id}/> )}
+            {props.artworks.map((artwork) => <Artwork artwork={artwork} key={artwork?.id}/> )}
             <div>
            
             </div>

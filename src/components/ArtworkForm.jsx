@@ -27,7 +27,7 @@ function ArtworkForm({artworks, artists, locations, initialArtwork, handleSubmit
         <form onSubmit={handleSubmission}>
             <input
                 type="text"
-                value={formData.title}
+                value={formData?.title}
                 name="title"
                 placeholder="title"
                 onChange={handleChange}
@@ -35,7 +35,7 @@ function ArtworkForm({artworks, artists, locations, initialArtwork, handleSubmit
             <br/>
             <input
                 type="number"
-                value={formData.year}
+                value={formData?.year}
                 name="year"
                 placeholder="year"
                 onChange={handleChange}
@@ -43,7 +43,7 @@ function ArtworkForm({artworks, artists, locations, initialArtwork, handleSubmit
             <br/>
             <input
                 type="text"
-                value={formData.medium}
+                value={formData?.medium}
                 name="medium"
                 placeholder="medium"
                 onChange={handleChange}
@@ -51,7 +51,7 @@ function ArtworkForm({artworks, artists, locations, initialArtwork, handleSubmit
             <br/>
             <input
                 type="text"
-                value={formData.image}
+                value={formData?.image}
                 name="image"
                 placeholder="image"
                 onChange={handleChange}
@@ -59,12 +59,12 @@ function ArtworkForm({artworks, artists, locations, initialArtwork, handleSubmit
             <br/>
             <select name="artist" value={formData.artist} onChange={handleChange}>
                 <option value="0">Select Artist</option> 
-                {artists.map((artist) => <option value={artist.id} key={artist.id}>{artist.name}</option>)}
+                {artists.map((artist) => <option value={artist?.id} key={artist?.id}>{artist?.name}</option>)}
             </select>
             <br/>
             <select name="location" value={formData.location} onChange={handleChange}>
                 <option value="0">Select Location</option> 
-                {locations.map((location) => <option value={location.id} key={location.id}>{location.name}</option>)}
+                {locations.map((location) => <option value={location?.id} key={location?.id}>{location?.name}</option>)}
             </select>
             <br/>
             <input type="submit" value={buttonLabel}/>
